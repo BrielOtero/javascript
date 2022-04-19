@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		function clickyDown(){
+			this.src="feliz.jpg";
+		}
+		function clickyUp(){
+			this.src="triste.jpg";
+		}
+		
+		window.onload= function(){
+			var elementos = document.getElementById("imagen");
+			elementos.addEventListener("mousedown",clickyDown,false);
+			elementos.addEventListener("mouseup",clickyUp,false);
+		}
+	</script>
+</head>
+<body>
+	<img id="imagen" src="triste.jpg" alt="">
+	
+</body>
+</html>

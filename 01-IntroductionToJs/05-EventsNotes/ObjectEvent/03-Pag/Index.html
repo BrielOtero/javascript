@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mouse1(object) {
+            var x = object.clientX;
+            var y = object.clientY;
+            document.getElementById("x1").innerHTML = "Posicion x " + x;
+            document.getElementById("y1").innerHTML = "Posicion y " + y;
+        }
+        window.onload = function() {
+            var element = document.getElementsByTagName("div");
+            element[0].addEventListener("mousemove", mouse1, false);
+        }
+    </script>
+</head>
+
+<body>
+
+    <div style="width:500px; height: 400px; border: 1px solid black;">
+        <h1 id="x1"></h1>
+        <h1 id="y1"></h1>
+    </div>
+
+</body>
+
+</html>

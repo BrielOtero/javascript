@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<script>
+		window.onload = function(){
+			var add = document.getElementById("add");
+			add.addEventListener("click", addElement,false);
+
+		}
+
+		function addElement(){
+			var value = document.getElementById("value");
+
+			var element = document.createElement("li");
+			var valueTxt = document.createTextNode("Hola");
+			element.appendChild(valueTxt);
+			document.appendChild(element);
+		}
+
+
+
+
+	</script>
+</head>
+<body>
+
+	<form action="" method="post">
+		<input type="text" name="" id="value">
+		<input type="submit" value="add" id ="add">
+	</form>
+	
+</body>
+</html>

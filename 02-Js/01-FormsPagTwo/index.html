@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Prueba</title>
+	<script>
+		function validarFormulario() {
+			var x = document.forms['formulario']['nombre'].value;
+			if (x == "") {
+				alert("El campo no puede estar vacío");
+				return false;
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<form name="formulario" action="" onsubmit="return validarFormulario()" method="post">
+		Nombre: <input type="text" name="nombre">
+		<input type="submit" value="Enviar Formulario">
+	</form>
+</body>
+
+</html>

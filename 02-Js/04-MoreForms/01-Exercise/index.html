@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		window.onload = function () {
+			var element = document.getElementById("enviar");
+			element.addEventListener("click", check, false);
+		}
+
+		function check() {
+			var nameValue = document.getElementById("name").value;
+			var lastNameValue = document.getElementById("lastname").value;
+			var emailValue = document.getElementById("email").value;
+			var passwordValue = document.getElementById("password").value;
+			var sexoValues = document.getElementsByName("sexo");
+			var sexoSelect = false;
+			var sexoSelectValue = "";
+			var interesValues = document.getElementsByClassName("topic");
+			var interesSelect = false;
+			var interesSelectValue = "";
+			var err=false;
+			for (var i = 0; i < sexoValues.length; i++) {
+				if (sexoValues[i].checked) {
+					sexoSelect = true;
+					sexoSelectValue = sexoValues[i].value;
+				}
+			}
+
+			console.log(sexoSelectValue);
+
+			for (var i = 0; i < interesValues.length; i++) {
+				if (interesValues[i].checked) {
+					interesSelect = true;
+					interesSelectValue += interesValues[i].value + "\n";
+				}
+			}
+
+			console.log(interesSelectValue);
+				
+				
+				if (nameValue == "") {
+					document.getElementById("errname").innerHTML = "-- Please fill this field";
+				} else {
+					document.getElementById("errname").innerHTML = "";
+				}
+
+				if (lastNameValue == "") {
+					document.getElementById("errlastname").innerHTML = "-- Please fill this field";
+				} else {
+					document.getElementById("errlastname").innerHTML = "";
+				}
+
+				if (emailValue == "") {
+					document.getElementById("errmail").innerHTML = "-- Please fill this field";
+				} else {
+
+					if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailValue)) {
+						document.getElementById("errmail").innerHTML = "-- Please enter a valid email";
+						err=true;
+					} else {
+						document.getElementById("errmail").innerHTML = "";
+					}
+				}
+				
+				if (passwordValue == "") {
+					document.getElementById("errpass").innerHTML = "-- Please fill this field";
+				} else {
+
+					if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(passwordValue)) {
+						document.getElementById("errpass").innerHTML = "-- Input Password and Submit [6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter]";
+						err=true;
+					} else {
+						document.getElementById("errpass").innerHTML = "";
+					}
+				}
+
+				if (!sexoSelect) {
+					document.getElementById("errsex").innerHTML = "-- Please fill this field";
+				} else {
+					document.getElementById("errsex").innerHTML = "";
+				}
+
+				if (!interesSelect) {
+					document.getElementById("errtopic").innerHTML = "-- Please fill this field";
+				} else {
+					document.getElementById("errtopic").innerHTML = "";
+				}
+			if (nameValue == "" || lastNameValue == "" || emailValue == "" || passwordValue == "" || sexoSelect == false || interesSelect == false||err) {
+				if(err){
+					alert("Please fill with valid parameters");
+				}else{
+					alert("Please fill the fields");
+				}
+			} else {
+				alert(interesSelectValue);
+			}
+		}
+
+
+	</script>
+</head>
+
+<body>
+	<p>Rellene los siquientes datos:</p>
+	<p></p>
+	<p>Nombre: <input type="text" name="name" id="name"></p>
+	<p id="errname"></p>
+	<p>Apellidos: <input type="text" name="lastname" id="lastname"></p>
+	<p id="errlastname"></p>
+	<p>Correo electrónico: <input type="email" name="email" id="email"></p>
+	<p id="errmail"></p>
+	<p>Contraseña: <input type="password" name="password" id="password"></p>
+	<p id="errpass"></p>
+	<p>Sexo:</p>
+	<p><input type="radio" name="sexo" id="h" value="h">Hombre</p>
+	<p><input type="radio" name="sexo" id="m" value="m">Mujer</p>
+	<p id="errsex"></p>
+	<p>Interesado en los siguientes temas:</p>
+	<p><input type="checkbox" name="musica" id="musica" class="topic" value="Música">Música</p>
+	<p><input type="checkbox" name="deportes" id="deportes" class="topic" value="Deportes">Deportes</p>
+	<p><input type="checkbox" name="cine" id="cine" class="topic" value="Cine">Cine</p>
+	<p><input type="checkbox" name="libros" id="libros" class="topic" value="Libros">Libros</p>
+	<p><input type="checkbox" name="ciencia" id="ciencia" class="topic" value="Ciencia">Ciencia</p>
+	<p id="errtopic"></p>
+	<p><input type="submit" value="Enviar Formulario" id="enviar"></p>
+
+</body>
+
+</html>

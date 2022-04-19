@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		window.onload = function () {
+			var element = document.getElementById("enviar");
+			element.addEventListener("click", showValues, false);
+		}
+		function showValues() {
+			var today = new Date();
+
+			var name = document.getElementById("name").value;
+			var email = document.getElementById("email").value;
+			var number = document.getElementById("number").value;
+			var text = document.getElementById("textzone").value;
+			var date = today.getDate();
+			alert("El mensaje " + text + " fue enviador por " + name + ", " + number + ". Su e-mail es: " + email + ". Enviado el " + date);
+
+		}
+
+	</script>
+</head>
+
+<body>
+	<form action="">
+		<p>Rellene el siguiente formulario</p>
+		<p>Nombre:<input type="text" name="nombre" id="name"></p>
+		<p>Email: <input type="email" name="correo" id="email"></p>
+		<P>Teléfono: <input type="number" name="numero" id="number"></P>
+		<p>Mensaje:<textarea name="text" id="textzone" cols="30" rows="10"></textarea></p>
+		<input type="submit" value="Enviar Datos" id="enviar">
+	</form>
+
+</body>
+
+</html>
