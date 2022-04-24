@@ -4,8 +4,16 @@ window.onload = function () {
 };
 
 function seeLenght() {
-  var areaValue = document.getElementById("area");
-  var stringArea = areaValue.nodeValue;
-  
-  alert(stringArea.toString.length)
+  var areaValue = document.getElementById("area").value;
+  var stringArea = areaValue.toString();
+
+  var characters= parseInt(stringArea.length);
+  var msgLabel = document.getElementById("msg");
+
+  if(characters<100){ 
+	  msgLabel.innerText="Quedan "+(100-characters)+" caracteres";
+	}else{
+		msgLabel.innerText="Has alcanzado el máximo de "+characters+" caracteres";
+	}
+
 }
