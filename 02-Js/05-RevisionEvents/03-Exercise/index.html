@@ -13,7 +13,9 @@
 <body onmouseover="select(4)">
 	<nav>
 		<ul class="menu">
-			<li onmouseover="select(1)" onmouseout="hideSelect(1)"><a>Sección Uno</a>
+			<div id="tpli" >
+				<li onmouseover="select(1)" onmouseout="hideSelect(1)"><a id="tp" >Sección Uno</a>
+			</div>
 				<ul id="1">
 					<li><a>Subsección 1.1</a></li>
                     <li><a>Subsección 1.2</a></li>
@@ -21,7 +23,7 @@
                     <li><a>Subsección 1.4</a></li>
                 </ul>
 			</li>
-            <li onmouseenter="select(2)" onmouseleave="hideSelect(2)"><a>Sección Dos</a>
+            <li id="tpli" onmouseenter="select(2)" onmouseleave="hideSelect(2)"><a  >Sección Dos</a>
                 <ul id="2" >
 					<li><a>Subsección 2.1</a></li>
                     <li><a>Subsección 2.2</a></li>
@@ -29,7 +31,7 @@
                     <li><a>Subsección 2.4</a></li>
                 </ul>
             </li>
-            <li onmouseover="select(3)" onmouseleave="hideSelect(3)"><a>Sección Tres</a>
+            <li id="tpli"  onmouseover="select(3)" onmouseleave="hideSelect(3)"><a id="tp" >Sección Tres</a>
 				<ul id="3">
 					<li><a>Subsección 3.1</a></li>
                     <li><a>Subsección 3.2</a></li>
