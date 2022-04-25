@@ -1,7 +1,7 @@
 window.onload = function () {
   var elements = document.getElementById("area");
   elements.addEventListener("change", seeLenght, false);
-};
+}
 
 function seeLenght() {
   var areaValue = document.getElementById("area").value;
